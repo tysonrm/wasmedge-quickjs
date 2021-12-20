@@ -1,0 +1,6 @@
+tasks:
+  - init: rustup target add wasm32-unknown-unknown && \
+          cp examples/embed_in_cloudflare/Cargo.toml Cargo.toml && \
+          cargo build --target wasm32-unknown-unknown --release
+  - command: echo "pre-build tasks have run"
+  
