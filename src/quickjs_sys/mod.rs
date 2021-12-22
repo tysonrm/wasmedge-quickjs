@@ -208,18 +208,8 @@ impl Context {
             js_init_module_std(ctx, "std\0".as_ptr() as *const i8);
             js_init_module_os(ctx, "os\0".as_ptr() as *const i8);
             let mut ctx = Context { rt, ctx };
-            #[cfg(feature = "http")]
-            super::internal_module::http_module::init_module(&mut ctx);
-
-            #[cfg(feature = "img")]
-            super::internal_module::img_module::init_module(&mut ctx);
-
-            #[cfg(feature = "tensorflow")]
-            {
-                super::internal_module::tensorflow_module::init_module_tensorflow(&mut ctx);
-                super::internal_module::tensorflow_module::init_module_tensorflow_lite(&mut ctx);
-            }
-
+      
+  
             #[cfg(feature = "cjs")]
             {
                 js_init_cjs(&mut ctx);
