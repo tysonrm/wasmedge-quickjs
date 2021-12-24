@@ -14,11 +14,15 @@ exclude = [
     "examples/*",
 ]
 
+[build-dependencies]
+cc = "1.0"
+
 [dependencies]
 # wasmedge_http_req  = "0.8.1"
 # wasmedge_wasi_socket = "0.2.0"
 # httpcodec = "0.2.3"
 # bytecodec = "0.4.15"
+
 
 argparse = "0.2.2"
 # image = { version = "0.23.0", default-features = false, features = ["jpeg", "png"] }
