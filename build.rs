@@ -13,8 +13,5 @@ fn main() {
     println!("cargo:rustc-link-search={}", &out_dir);
     println!("cargo:rustc-link-lib=quickjs");
     
-    cc::Build::new()
-        .file("foo.c")
-        .file("bar.c")
-        .compile("foo");
+    
 }
