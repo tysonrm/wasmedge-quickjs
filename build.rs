@@ -1,4 +1,5 @@
 use std::path::Path;
+use cc;
 
 fn main() {
     let out_dir = std::env::var("OUT_DIR").unwrap();
@@ -7,4 +8,9 @@ fn main() {
         .expect("Could not copy libquickjs.a to output directory");
     println!("cargo:rustc-link-search={}", &out_dir);
     println!("cargo:rustc-link-lib=quickjs");
+    
+    cc::Build::new()
+        .file("foo.c")
+        .file("bar.c")
+        .compile("foo");
 }
